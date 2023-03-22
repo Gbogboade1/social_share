@@ -206,11 +206,11 @@ class SocialShare {
     }
     final tempDir = await getTemporaryDirectory();
 
-    File file = File(imagePath);
-    Uint8List bytes = file.readAsBytesSync();
+    var file = File(imagePath);
+    var bytes = file.readAsBytesSync();
     var stickerData = bytes.buffer.asUint8List();
     String stickerAssetName = filename;
-    final Uint8List stickerAssetAsList = stickerData;
+    var stickerAssetAsList = stickerData;
     final stickerAssetPath = '${tempDir.path}/$stickerAssetName';
     file = await File(stickerAssetPath).create();
     file.writeAsBytesSync(stickerAssetAsList);
